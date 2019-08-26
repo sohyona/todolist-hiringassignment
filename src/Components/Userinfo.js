@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 // import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import TodoListItem from './TodoListItem';
+// import TodoListItem from './TodoListItem';
+import {Dropdown} from 'react-bootstrap';
 
 export default class Userinfo extends Component {
   constructor (props) {
@@ -45,11 +46,19 @@ export default class Userinfo extends Component {
         </div>
 
         <div className="todoListTable">
-          <ul>
-            {this.state.todoList.map (item => (
-              <TodoListItem key={item.id} todoItem={item} />
-            ))}
-          </ul>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Todo List
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              {this.state.todoList.map (item => (
+                <Dropdown.Item key={item.id}>
+                  {item.title}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </div>
     );
