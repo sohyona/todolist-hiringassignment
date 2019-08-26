@@ -1,11 +1,18 @@
-import React from 'react';
-import {NONAME} from 'dns';
+import React, {Component} from 'react';
 
-export default function TodoListItem (props) {
-  const todoCompleted = {
-    textDecoration: props.todoItem.completed ? 'line-through' : 'none',
-  };
-  return (
-    <li className="todoItem" style={todoCompleted}>{props.todoItem.title}</li>
-  );
+export default class TodoListItem extends Component {
+  constructor (props) {
+    super (props);
+    this.todoCompleted = {
+      textDecoration: props.todoItem.completed ? 'line-through' : 'none',
+    };
+  }
+
+  render () {
+    return (
+      <li className="todoItem" style={this.todoCompleted}>
+        {this.props.todoItem.title}
+      </li>
+    );
+  }
 }
