@@ -6,7 +6,6 @@ export default class Userinfo extends Component {
     super (props);
     this.state = {
       userinfo: [],
-      currentUser: '',
     };
     this.server = 'https://koreanjson.com';
   }
@@ -26,10 +25,14 @@ export default class Userinfo extends Component {
   render () {
     return (
       <div>
-        <h1>{this.state.userinfo.name}</h1>
-        <p>{this.state.userinfo.email}</p>
-        <p>{this.state.userinfo.phone}</p>
-        <p>{this.state.userinfo.street}</p>
+        <div className="userInfo">
+          <h1>{this.state.userinfo.name}</h1>
+          <p>{this.state.userinfo.email}</p>
+          <p>{this.state.userinfo.phone}</p>
+          <p>{this.state.userinfo.street}</p>
+        </div>
+
+        <div className="todoList" />
       </div>
     );
   }
