@@ -40,6 +40,10 @@ export default class Userinfo extends Component {
       <div>
         <div className="userInfo">
           <h1>{this.state.userinfo.name}</h1>
+          <img
+            src="https://randomuser.me/api/portraits/men/64.jpg"
+            alt="profile"
+          />
           <p>{this.state.userinfo.email}</p>
           <p>{this.state.userinfo.phone}</p>
           <p>{this.state.userinfo.street}</p>
