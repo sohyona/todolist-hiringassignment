@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import TodoListItem from './TodoListItem';
 
 export default class Userinfo extends Component {
   constructor (props) {
     super (props);
     this.state = {
       userinfo: [],
+      todoList: [],
     };
     this.server = 'https://koreanjson.com';
   }
@@ -14,8 +17,17 @@ export default class Userinfo extends Component {
     axios
       .get (this.server + this.props.location.pathname)
       .then (res => {
-        console.log (res.data);
+        // console.log (res.data);
         this.setState ({userinfo: res.data});
+      })
+      .catch (err => {
+        console.log (err);
+      });
+
+    axios
+      .get (this.server + '/todos?userId=' + this.props.match.params.id)
+      .then (res => {
+        this.setState ({todoList: res.data});
       })
       .catch (err => {
         console.log (err);
@@ -32,7 +44,13 @@ export default class Userinfo extends Component {
           <p>{this.state.userinfo.street}</p>
         </div>
 
-        <div className="todoList" />
+        <div className="todoListTable">
+          <ul>
+            {this.state.todoList.map (item => (
+              <TodoListItem key={item.id} todoItem={item} />
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
