@@ -1,30 +1,54 @@
 {
     "client":	{
-                    "basic":	{
-                        "json": 3,
-                        "setting": 3,
-                        "design": 2,
-                        "readme": 3,
-                        "render_01": 2,
-                        "render_02": 2,
-                        "router": 2,
-                        "fetch": 3,
-                        "cond_render": 1,
-                        "css": 2,
-                        "git": 3
-                    },
-                    "advanced":	{
-                        "link": 0,
-                        "back": 0,
-                        "deploy": 0,
-                        "loading": 0,
-                        "responsive": 0,
-                        "posting": 0,
-                        "pagination": 0,
-                        "reply": 0
-                    }
+        "basic":	{
+            "json": 3,
+            "setting": 3,
+            "design": 2,
+            "readme": 3,
+            "render_01": 2,
+            "render_02": 2,
+            "router": 2,
+            "fetch": 3,
+            "cond_render": 1,
+            "css": 2,
+            "git": 3
+        },
+        "advanced":	{
+            "link": 0,
+            "back": 0,
+            "deploy": 0,
+            "loading": 0,
+            "responsive": 0,
+            "posting": 0,
+            "pagination": 0,
+            "reply": 0
+        }
     },
     "server": {
-        "basic": {}
+        "basic": {
+            "json": 1,
+            "setting": 1,
+            "run": 1,
+            "readme": 1,
+            "secret": 3,
+            "controller": 1,
+            "router": 1,
+            "model": 1,
+            "docs": 4,
+            "error_server": 4,
+            "data": 1,
+            "db":1,
+            "env": 3,
+            "git": 1
+        },
+        "advanced": {
+            "middleware" : 3,
+            "mvc": 4,
+            "error_client": 1,
+            "adv_01": 4,
+            "adv_02": 4,
+            "system": 4,
+            "script": 1
+        }
     }
 }

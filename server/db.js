@@ -15,6 +15,7 @@ db
   });
 
 const users = db.define ('users', {
+  name: Sequelize.STRING (31),
   username: Sequelize.STRING (31),
   email: Sequelize.STRING (31),
   phone: Sequelize.STRING (31),

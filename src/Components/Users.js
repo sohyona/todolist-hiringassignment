@@ -8,7 +8,7 @@ export default class Users extends Component {
     this.state = {
       users: [],
     };
-    this.server = 'https://koreanjson.com/';
+    this.server = 'http://localhost:3001/';
   }
 
   componentDidMount () {
@@ -24,6 +24,7 @@ export default class Users extends Component {
   }
 
   render () {
+    console.log (this.state.users);
     return (
       <ul>
         <h1>유저리스트</h1>
