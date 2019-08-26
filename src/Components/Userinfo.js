@@ -56,11 +56,11 @@ export default class Userinfo extends Component {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {this.state.todoList.map (item => (
+              {this.state.todoList.map (item => 
                 <Dropdown.Item key={item.id}>
                   {item.title}
                 </Dropdown.Item>
-              ))}
+              )}
             </Dropdown.Menu>
           </Dropdown>
         </div>
