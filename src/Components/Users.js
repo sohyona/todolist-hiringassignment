@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {BrowserRouter as Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class Users extends Component {
   constructor (props) {
@@ -29,7 +29,7 @@ export default class Users extends Component {
         <h1>유저리스트</h1>
         {this.state.users.map (user => (
           <li key={user.id} userinfo={user}>
-            <Link to={`/user/${user.id}`}>{user.name}</Link>
+            <Link to={`/users/${user.id}`}>{user.name}</Link>
           </li>
         ))}
       </ul>

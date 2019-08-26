@@ -6,13 +6,14 @@ export default class Userinfo extends Component {
     super (props);
     this.state = {
       userinfo: [],
+      currentUser: '',
     };
-    this.server = 'https://koreanjson.com/';
+    this.server = 'https://koreanjson.com';
   }
 
   componentDidMount () {
     axios
-      .get (this.server + 'users/1')
+      .get (this.server + this.props.location.pathname)
       .then (res => {
         console.log (res.data);
         this.setState ({userinfo: res.data});
@@ -23,11 +24,13 @@ export default class Userinfo extends Component {
   }
 
   render () {
-    return (<div>
+    return (
+      <div>
         <h1>{this.state.userinfo.name}</h1>
         <p>{this.state.userinfo.email}</p>
         <p>{this.state.userinfo.phone}</p>
         <p>{this.state.userinfo.street}</p>
-    </div>);
+      </div>
+    );
   }
 }
